@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Employee</h1>
+        <form method="POST" action="{% url 'create-employee' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="employee_number">Employee Number:</label>
+                <input type="text" id="employee_number" name="employee_number" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" name="salary" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="working_experience">Working Experience:</label>
+                <input type="number" id="working_experience" name="working_experience" class="form-control" required>
+            </div>
+            <input type="submit" value="Create" class="btn btn-primary">
+            <a href={% url 'employee-lists' %} class="btn btn-warning">Home</a>
+
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
